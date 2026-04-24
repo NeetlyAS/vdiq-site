@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VDiQ IP Services</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+/* NAV */
+nav { background: #1e4da1; position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.nav-logo-ph { background: rgba(255,255,255,0.15); border: 1.5px dashed rgba(255,255,255,0.5); border-radius: 6px; width: 110px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; color: rgba(255,255,255,0.75); letter-spacing: 0.06em; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: rgba(255,255,255,0.8); font-size: 13px; text-decoration: none; white-space: nowrap; }
+.nav-links a:hover { color: #fff; }
+.nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav-li { color: rgba(255,255,255,0.8); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.nav-lang { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.38); border-radius: 4px; padding: 4px 12px; font-size: 12px; cursor: pointer; font-family: inherit; }
+
+/* HERO */
+.hero { background: #1e4da1; padding: 72px 40px 80px; text-align: center; }
+.hero-badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.9); white-space: nowrap; }
+.hero-name { color: #fff; font-size: 48px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.5px; }
+.hero-sub { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 24px; }
+.hero-tag { color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.65; max-width: 540px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: #c0392b; color: #fff; border-radius: 7px; padding: 15px 36px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: inherit; }
+.hero-cta:hover { background: #a93226; }
+
+/* TRUST BAR */
+.trust { background: #f0f0ee; border-bottom: 1px solid #e0e0dd; }
+.trust-inner { max-width: 1080px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr); }
+.ti { padding: 22px 12px; text-align: center; border-right: 1px solid #e0e0dd; }
+.ti:last-child { border-right: none; }
+.tin { font-size: 22px; font-weight: 700; color: #1e4da1; }
+.til { font-size: 12px; color: #666; margin-top: 4px; line-height: 1.35; }
+
+/* SECTIONS */
+.sec { padding: 72px 0; }
+.sec-alt { background: #f7f7f5; }
+.lbl { font-size: 11px; color: #c0392b; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.ttl { font-size: 32px; font-weight: 700; color: #1a1a1a; margin-bottom: 36px; }
+
+/* SERVICES */
+.sg { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sc { background: #fff; border: 1px solid #e8e8e6; border-top: 3px solid #1e4da1; border-radius: 10px; padding: 24px; }
+.si { width: 36px; height: 36px; background: #dce8f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.sn { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
+.sd { font-size: 13px; color: #666; line-height: 1.55; }
+
+/* ABOUT */
+.ar { display: flex; gap: 40px; align-items: flex-start; }
+.photo-ph { width: 180px; height: 220px; border-radius: 12px; flex-shrink: 0; background: #ebebea; border: 2px dashed #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #999; font-size: 12px; }
+.an { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+.arl { font-size: 13px; color: #c0392b; margin-bottom: 16px; }
+.ab { font-size: 14px; color: #444; line-height: 1.75; }
+.aq { border-left: 3px solid #c0392b; padding: 12px 20px; margin: 20px 0; font-size: 14px; font-style: italic; color: #555; line-height: 1.65; }
+.at { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+.tag { background: #dce8f5; color: #1e4da1; font-size: 12px; padding: 4px 10px; border-radius: 5px; }
+.ali { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #1e4da1; text-decoration: none; font-weight: 500; }
+
+/* TESTIMONIALS */
+.tg { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.tc { background: #fff; border: 1px solid #e8e8e6; border-radius: 10px; padding: 24px; }
+.tq { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.ta { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+.ts { font-size: 12px; color: #888; margin-top: 2px; }
+
+/* CONTACT */
+.ch { text-align: center; margin-bottom: 48px; }
+.ch .ttl { margin-bottom: 0; }
+.cg { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 820px; margin: 0 auto; }
+.cl { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border: 1px solid #ddd; border-radius: 9px; font-size: 14px; color: #1a1a1a; text-decoration: none; background: #fff; margin-bottom: 12px; }
+.cl:hover { border-color: #1e4da1; }
+.clb { font-size: 12px; color: #888; margin-top: 20px; margin-bottom: 4px; }
+.cv { font-size: 14px; color: #1a1a1a; line-height: 1.65; }
+.cn { font-size: 13px; color: #777; margin-top: 14px; line-height: 1.6; }
+.fl { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.fl label { font-size: 12px; color: #666; }
+.fi { border: 1px solid #ddd; border-radius: 8px; padding: 11px 14px; font-size: 14px; color: #1a1a1a; font-family: inherit; width: 100%; outline: none; }
+.fi:focus { border-color: #1e4da1; }
+.fta { resize: none; height: 90px; }
+.fck { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #777; line-height: 1.5; margin-bottom: 12px; }
+.fck input { margin-top: 2px; flex-shrink: 0; }
+.fsb { background: #c0392b; color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; font-family: inherit; }
+.fsb:hover { background: #a93226; }
+
+/* PARTNERS */
+.pr { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.pph { height: 48px; width: 160px; background: #f0f0ee; border: 1.5px dashed #ccc; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #aaa; }
+
+/* FOOTER */
+footer { background: #1e4da1; }
+.fw { max-width: 1080px; margin: 0 auto; padding: 48px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.ft2 { color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+.fv { color: rgba(255,255,255,0.8); font-size: 13px; line-height: 2; }
+.fbot { background: #173d86; }
+.fbot-inner { max-width: 1080px; margin: 0 auto; padding: 14px 40px; }
+.fc { color: rgba(255,255,255,0.35); font-size: 12px; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+
+  /* nav mobile */
+  .nav-inner { padding: 0 20px; height: 56px; }
+  .nav-logo-ph { width: 80px; height: 32px; font-size: 10px; }
+  .nav-links { display: none; }
+  .nav-li span { display: none; }
+
+  /* hero mobile */
+  .hero { padding: 48px 20px 56px; }
+  .hero-name { font-size: 32px; }
+  .hero-tag { font-size: 16px; }
+  .hero-cta { padding: 13px 28px; font-size: 14px; }
+
+  /* trust mobile - 2 cols */
+  .trust-inner { padding: 0 20px; grid-template-columns: 1fr 1fr; }
+  .ti:nth-child(2) { border-right: none; }
+  .ti:nth-child(3) { border-top: 1px solid #e0e0dd; }
+  .ti:nth-child(4) { border-top: 1px solid #e0e0dd; }
+  .tin { font-size: 18px; }
+
+  /* sections mobile */
+  .sec { padding: 48px 0; }
+  .ttl { font-size: 24px; margin-bottom: 24px; }
+
+  /* services mobile - 1 col */
+  .sg { grid-template-columns: 1fr; }
+
+  /* about mobile - stack */
+  .ar { flex-direction: column; gap: 24px; }
+  .photo-ph { width: 100%; height: 160px; }
+
+  /* testimonials mobile - 1 col */
+  .tg { grid-template-columns: 1fr; }
+
+  /* contact mobile - stack */
+  .cg { grid-template-columns: 1fr; gap: 32px; max-width: 100%; }
+  .ch { margin-bottom: 32px; }
+
+  /* partners mobile */
+  .pr { gap: 12px; }
+  .pph { width: calc(50% - 6px); height: 44px; }
+
+  /* footer mobile */
+  .fw { padding: 40px 20px; grid-template-columns: 1fr; gap: 28px; }
+  .fbot-inner { padding: 14px 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero-name { font-size: 28px; }
+  .badge { font-size: 11px; padding: 4px 10px; }
+}
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo-ph">LOGO</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-li" href="https://www.linkedin.com/in/stevenvandijk/" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="rgba(255,255,255,0.8)" stroke-width="1.3"/><path d="M4 6.5v5M4 4.5v.01M7 11.5V9c0-1.1.9-2 2-2s2 .9 2 2v2.5M7 6.5v5" stroke="rgba(255,255,255,0.8)" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <button class="nav-lang" onclick="this.textContent=this.textContent==='EN'?'NO':'EN'">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badges">
+    <span class="badge">European Patent Attorney</span>
+    <span class="badge">Dutch Patent Attorney</span>
+    <span class="badge">UPC Representative</span>
+  </div>
+  <div class="hero-name">Steven van Dijk</div>
+  <div class="hero-sub">Founder · VDiQ IP Services · Stavanger, Norway</div>
+  <div class="hero-tag">Your personal IP expert with 22+ years of experience — patents, trademarks and design rights for innovators in Norway and beyond.</div>
+  <a class="hero-cta" href="#contact">Book a free introductory call</a>
+</div>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="ti"><div class="tin">22+</div><div class="til">years of IP experience</div></div>
+    <div class="ti"><div class="tin">24</div><div class="til">patents filed at Philips</div></div>
+    <div class="ti"><div class="tin">NO · NL · EP</div><div class="til">patent authorities</div></div>
+    <div class="ti"><div class="tin">UPC</div><div class="til">registered representative</div></div>
+  </div>
+</div>
+
+<div class="sec" id="services">
+  <div class="container">
+    <div class="lbl">Services</div>
+    <div class="ttl">What we can do for you</div>
+    <div class="sg">
+      <div class="sc">
+        <div class="si"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#1e4da1" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#1e4da1" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="sn">Patent services</div>
+        <div class="sd">Brainstorming &amp; searching · Filing &amp; prosecution · Opposition &amp; appeal</div>
+      </div>
+      <div class="sc">
+        <div class="si"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#1e4da1" stroke-width="1.5"/><path d="M8 5.5v3l2 1.5" stroke="#1e4da1" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="sn">IP advice &amp; strategy</div>
+        <div class="sd">FTO &amp; IP landscaping · Portfolio management · Infringement &amp; litigation</div>
+      </div>
+      <div class="sc">
+        <div class="si"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1e4da1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sn">Trademarks &amp; design</div>
+        <div class="sd">Filing &amp; prosecution · Opposition &amp; appeal · Infringement &amp; litigation</div>
+      </div>
+      <div class="sc">
+        <div class="si"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 3 3 5-6" stroke="#1e4da1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sn">Webinars &amp; courses</div>
+        <div class="sd">IP awareness &amp; training · Inventor guidance &amp; mentoring</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec sec-alt" id="about">
+  <div class="container">
+    <div class="lbl">About</div>
+    <div class="ttl">The person behind VDiQ</div>
+    <div class="ar">
+      <div class="photo-ph">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#bbb" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>photo</span>
+      </div>
+      <div>
+        <div class="an">Steven van Dijk</div>
+        <div class="arl">Founder, CEO · European and Dutch Patent Attorney</div>
+        <div class="ab">After graduating in Electronic Engineering from Eindhoven University of Technology, Steven worked at Philips Research Laboratories as a Research Scientist, filing 24 invention disclosures. In 2003 he joined Philips IP&amp;S as patent attorney trainee, qualified as Dutch patent attorney and began European Patent Attorney training. He later moved through NXP Semiconductors and DeltaPatents. In 2013 he emigrated with his family to Norway and joined Håmsø Patentbyrå in Stavanger — 7 years as senior attorney, nearly 5 as partner. At the end of 2024, he founded VDiQ IP Services.</div>
+        <div class="aq">"Great ideas deserve great protection — innovation means little without the power to own it."</div>
+        <div class="at">
+          <span class="tag">Philips Research</span>
+          <span class="tag">NXP Semiconductors</span>
+          <span class="tag">Håmsø Patentbyrå</span>
+          <span class="tag">European Patent Attorney</span>
+          <span class="tag">UPC representative</span>
+        </div>
+        <a class="ali" href="https://www.linkedin.com/in/stevenvandijk/" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#1e4da1" stroke-width="1.3"/><path d="M4 6.5v5M4 4.5v.01M7 11.5V9c0-1.1.9-2 2-2s2 .9 2 2v2.5M7 6.5v5" stroke="#1e4da1" stroke-width="1.3" stroke-linecap="round"/></svg>
+          linkedin.com/in/stevenvandijk
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="testimonials">
+  <div class="container">
+    <div class="lbl">Testimonials</div>
+    <div class="ttl">What clients say</div>
+    <div class="tg">
+      <div class="tc">
+        <div class="tq">"Steven has provided my US clients with outstanding IP representation in Europe. He is an excellent counselor with a keen ability to quickly understand complex situations and provide thoughtful solutions."</div>
+        <div class="ta">Peter T. Holsen</div>
+        <div class="ts">Attorney · Andrus Intellectual Property Law, LLP</div>
+      </div>
+      <div class="tc">
+        <div class="tq">"Steven has a wealth of experience working both in-house and in a firm setting. His experience gives him the perspective to provide pragmatic, multi-faceted solutions."</div>
+        <div class="ta">Kazim Agha</div>
+        <div class="ts">Partner · Aird &amp; McBurney</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec sec-alt" id="contact">
+  <div class="container">
+    <div class="ch">
+      <div class="lbl">Contact</div>
+      <div class="ttl">Get in touch</div>
+    </div>
+    <div class="cg">
+      <div>
+        <a class="cl" href="mailto:post@vdiq-ip.com">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5" stroke="#1e4da1" stroke-width="1.3" stroke-linecap="round"/><rect x="1" y="3" width="14" height="10" rx="2" stroke="#1e4da1" stroke-width="1.3"/></svg>
+          post@vdiq-ip.com
+        </a>
+        <a class="cl" href="tel:+4792995015">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c0 6.5 4 10.5 10.5 10.5v-3l-2.5-.5-1 1.5C8 10 6 8 5 6l1.5-1L6 2.5H3z" stroke="#1e4da1" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          +47 929 95 015
+        </a>
+        <a class="cl" href="https://www.linkedin.com/in/stevenvandijk/" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#1e4da1" stroke-width="1.3"/><path d="M4 6.5v5M4 4.5v.01M7 11.5V9c0-1.1.9-2 2-2s2 .9 2 2v2.5M7 6.5v5" stroke="#1e4da1" stroke-width="1.3" stroke-linecap="round"/></svg>
+          LinkedIn
+        </a>
+        <div class="clb">Office</div>
+        <div class="cv">Grenseveien 21, 4313 Sandnes<br><span style="font-size:12px;color:#888">at FOMO Works, Forus</span></div>
+        <div class="cn">Write to us and Steven will get back to you within 1 business day to agree on a time.</div>
+      </div>
+      <div>
+        <div class="fl"><label>Your name</label><input class="fi" type="text" placeholder="Jan Hansen"></div>
+        <div class="fl"><label>Email or phone</label><input class="fi" type="text" placeholder="jan@firma.no  or  +47 000 00 000"></div>
+        <div class="fl"><label>Message (optional)</label><textarea class="fi fta" placeholder="Briefly tell us what you need help with..."></textarea></div>
+        <div class="fck"><input type="checkbox"><span>I agree to VDiQ IP Services' <a href="#" style="color:#1e4da1;">privacy policy</a></span></div>
+        <button class="fsb">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="container">
+    <div class="lbl" style="margin-bottom:20px;">Partners</div>
+    <div class="pr">
+      <div class="pph">Van Buren PM</div>
+      <div class="pph">Hauge Network</div>
+      <div class="pph">MOFix Design</div>
+      <div class="pph">Innovation Dock</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fw">
+    <div><div class="ft2">Contact</div><div class="fv">+47 929 95 015<br>post@vdiq-ip.com</div></div>
+    <div><div class="ft2">Address</div><div class="fv">Grenseveien 21<br>4313 Sandnes, Norway</div></div>
+    <div><div class="ft2">Documents</div><div class="fv">Terms &amp; Conditions<br>Privacy Policy<br>Invention Disclosure Form</div></div>
+  </div>
+  <div class="fbot"><div class="fbot-inner"><span class="fc">© 2025 VDiQ IP Services AS · Enterprise 935 218 969</span></div></div>
+</footer>
+
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+</script>
+</body>
+</html>

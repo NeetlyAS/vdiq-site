@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "name": "Steven van Dijk",
+    "subtitle": "Founder · VDiQ IP Services · Stavanger, Norway",
+    "tagline": "Your personal IP expert with 22+ years of experience — patents, trademarks and design rights for innovators in Norway and beyond.",
+    "button": "Book a free introductory call"
+  },
+  "trust": [
+    {"number": "22+", "label": "years of IP experience"},
+    {"number": "24", "label": "patents filed at Philips"},
+    {"number": "NO · NL · EP", "label": "patent authorities"},
+    {"number": "UPC", "label": "registered representative"}
+  ],
+  "services": [
+    {"title": "Patent services", "description": "Brainstorming & searching · Filing & prosecution · Opposition & appeal"},
+    {"title": "IP advice & strategy", "description": "FTO & IP landscaping · Portfolio management · Infringement & litigation"},
+    {"title": "Trademarks & design", "description": "Filing & prosecution · Opposition & appeal · Infringement & litigation"},
+    {"title": "Webinars & courses", "description": "IP awareness & training · Inventor guidance & mentoring"}
+  ],
+  "about": {
+    "name": "Steven van Dijk",
+    "role": "Founder, CEO · European and Dutch Patent Attorney",
+    "bio": "After graduating in Electronic Engineering from Eindhoven University of Technology, Steven worked at Philips Research Laboratories as a Research Scientist, filing 24 invention disclosures. In 2003 he joined Philips IP&S as patent attorney trainee, qualified as Dutch patent attorney and began European Patent Attorney training. He later moved through NXP Semiconductors and DeltaPatents. In 2013 he emigrated with his family to Norway and joined Håmsø Patentbyrå in Stavanger — 7 years as senior attorney, nearly 5 as partner. At the end of 2024, he founded VDiQ IP Services.",
+    "quote": "Great ideas deserve great protection — innovation means little without the power to own it.",
+    "photo": "",
+    "linkedin": "https://www.linkedin.com/in/stevenvandijk/"
+  },
+  "testimonials": [
+    {
+      "quote": "Steven has provided my US clients with outstanding IP representation in Europe. He is an excellent counselor with a keen ability to quickly understand complex situations and provide thoughtful solutions.",
+      "name": "Peter T. Holsen",
+      "company": "Attorney · Andrus Intellectual Property Law, LLP"
+    },
+    {
+      "quote": "Steven has a wealth of experience working both in-house and in a firm setting. His experience gives him the perspective to provide pragmatic, multi-faceted solutions.",
+      "name": "Kazim Agha",
+      "company": "Partner · Aird & McBurney"
+    }
+  ],
+  "contact": {
+    "email": "post@vdiq-ip.com",
+    "phone": "+47 929 95 015",
+    "address": "Grenseveien 21, 4313 Sandnes",
+    "office_note": "at FOMO Works, Forus"
+  },
+  "partners": [
+    {"name": "Van Buren Patent Management", "logo": ""},
+    {"name": "Hauge Business Network", "logo": ""},
+    {"name": "MOFix Design", "logo": ""},
+    {"name": "Innovation Dock", "logo": ""}
+  ],
+  "footer": {
+    "copyright": "© 2025 VDiQ IP Services AS · Enterprise 935 218 969"
+  }
+}

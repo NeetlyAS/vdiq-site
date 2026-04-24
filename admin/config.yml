@@ -1,0 +1,78 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/static/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "homepage"
+        label: "Homepage"
+        file: "_data/content.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "name", widget: "string", default: "Steven van Dijk"}
+              - {label: "Subtitle", name: "subtitle", widget: "string", default: "Founder · VDiQ IP Services · Stavanger, Norway"}
+              - {label: "Tagline", name: "tagline", widget: "text"}
+              - {label: "Button text", name: "button", widget: "string", default: "Book a free introductory call"}
+
+          - label: "Trust bar"
+            name: "trust"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "number", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+              - {label: "Quote", name: "quote", widget: "string"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
+
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Address", name: "address", widget: "string"}
+              - {label: "Office note", name: "office_note", widget: "string"}
+
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - {label: "Copyright", name: "copyright", widget: "string"}
